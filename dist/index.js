@@ -1,54 +1,21 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.meta = exports.Block = exports.Inline = void 0;
 
-var _metadata = require('./metadata');
+var _Inline = _interopRequireDefault(require("./Inline"));
 
-Object.defineProperty(exports, 'metadata', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_metadata).default;
-  }
-});
+var _Block = _interopRequireDefault(require("./Block"));
 
-var _BlockDynamic = require('./BlockDynamic');
-
-Object.defineProperty(exports, 'BlockDynamic', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BlockDynamic).default;
-  }
-});
-
-var _BlockStatic = require('./BlockStatic');
-
-Object.defineProperty(exports, 'BlockStatic', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BlockStatic).default;
-  }
-});
-
-var _InlineStatic = require('./InlineStatic');
-
-Object.defineProperty(exports, 'InlineStatic', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_InlineStatic).default;
-  }
-});
-
-var _InlineDynamic = require('./InlineDynamic');
-
-Object.defineProperty(exports, 'InlineDynamic', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_InlineDynamic).default;
-  }
-});
+var _meta = _interopRequireDefault(require("./meta"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultCss = exports.defaultCss = '';
+const Inline = _Inline.default;
+exports.Inline = Inline;
+const Block = _Block.default;
+exports.Block = Block;
+const meta = _meta.default;
+exports.meta = meta;
