@@ -1,6 +1,7 @@
 /* eslint react/no-danger : 0 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Inline = ( {
   resource,
@@ -9,6 +10,7 @@ const Inline = ( {
   renderingMode = 'screen',
   children,
 }, {
+  inNote
 } ) => {
   const url = resource.data.url;
   return (
@@ -27,7 +29,7 @@ const Inline = ( {
           return true;
         } ) ).length ? children : '*'}
       {
-        renderingMode === 'paged' &&
+        renderingMode === 'paged' && !inNote &&
         <sup
           id={ contextualization.id }
           className={ 'footnote' }
@@ -39,6 +41,9 @@ const Inline = ( {
     </a>
   );
 };
+Inline.contextTypes = {
+  inNote: PropTypes.bool
+}
 
 
 export default Inline;
