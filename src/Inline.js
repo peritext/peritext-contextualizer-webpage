@@ -13,6 +13,18 @@ const Inline = ( {
   inNote
 } ) => {
   const url = resource.data.url;
+  if ( renderingMode === 'paged' && !inNote) {
+    return <>
+      {children}
+      <sup
+        id={ 'footnote-pointer-' + contextualization.id }
+        className={ 'footnote' }
+        data-notenumber={ '*' }
+      >
+        <a target="blank" rel="noopener" href={url}>{url}</a>
+      </sup>
+    </>
+  }
   return (
     <a
       id={ contextualization.id }
@@ -28,16 +40,6 @@ const Inline = ( {
           }
           return true;
         } ) ).length ? children : '*'}
-      {
-        renderingMode === 'paged' && !inNote &&
-        <sup
-          id={ 'footnote-pointer-' + contextualization.id }
-          className={ 'footnote' }
-          data-notenumber={ '*' }
-        >
-          {url}
-        </sup>
-      }
     </a>
   );
 };

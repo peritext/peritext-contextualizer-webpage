@@ -1,6 +1,6 @@
 {
   "name": "peritext-contextualizer-webpage",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Peritext default webpage contextualizer",
   "main": "dist/index.js",
   "scripts": {

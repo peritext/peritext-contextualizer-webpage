@@ -22,6 +22,19 @@ const Inline = ({
   inNote
 }) => {
   const url = resource.data.url;
+
+  if (renderingMode === 'paged' && !inNote) {
+    return _react.default.createElement(_react.default.Fragment, null, children, _react.default.createElement("sup", {
+      id: 'footnote-pointer-' + contextualization.id,
+      className: 'footnote',
+      "data-notenumber": '*'
+    }, _react.default.createElement("a", {
+      target: "blank",
+      rel: "noopener",
+      href: url
+    }, url)));
+  }
+
   return _react.default.createElement("a", {
     id: contextualization.id,
     target: 'blank',
@@ -34,11 +47,7 @@ const Inline = ({
     }
 
     return true;
-  }).length ? children : '*', renderingMode === 'paged' && !inNote && _react.default.createElement("sup", {
-    id: 'footnote-pointer-' + contextualization.id,
-    className: 'footnote',
-    "data-notenumber": '*'
-  }, url));
+  }).length ? children : '*');
 };
 
 Inline.contextTypes = {
