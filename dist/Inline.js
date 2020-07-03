@@ -35,7 +35,7 @@ const Inline = ({
 
     return true;
   }).length ? children : '*', renderingMode === 'paged' && !inNote && _react.default.createElement("sup", {
-    id: contextualization.id,
+    id: 'footnote-pointer-' + contextualization.id,
     className: 'footnote',
     "data-notenumber": '*'
   }, url));

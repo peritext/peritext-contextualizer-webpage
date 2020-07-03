@@ -31,7 +31,7 @@ const Inline = ( {
       {
         renderingMode === 'paged' && !inNote &&
         <sup
-          id={ contextualization.id }
+          id={ 'footnote-pointer-' + contextualization.id }
           className={ 'footnote' }
           data-notenumber={ '*' }
         >
