@@ -32,7 +32,7 @@ const Inline = ({
       target: "blank",
       rel: "noopener",
       href: url
-    }, url)));
+    }, url), "."));
   }
 
   return _react.default.createElement("a", {

@@ -21,7 +21,7 @@ const Inline = ( {
         className={ 'footnote' }
         data-notenumber={ '*' }
       >
-        <a target="blank" rel="noopener" href={url}>{url}</a>
+        <a target="blank" rel="noopener" href={url}>{url}</a>.
       </sup>
     </>
   }
